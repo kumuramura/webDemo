@@ -2,6 +2,10 @@ package com.fjw.demo.config;
 
 import com.fjw.demo.component.LoginHandleInterceptor;
 import com.fjw.demo.component.MyLocalResolver;
+import org.springframework.boot.web.server.ConfigurableWebServerFactory;
+import org.springframework.boot.web.server.WebServerFactory;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.context.EmbeddedValueResolverAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
@@ -12,6 +16,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //使用WebMvcConfigurer来扩展springMVC的功能
 @Configuration
 public class MyMvcConfig implements WebMvcConfigurer {
+
+
+
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //浏览器发送 /fjw 也能来success
